@@ -32,4 +32,11 @@ class lear_tech_media_model extends CI_Model {
 			echo 'false';
 		}
     }
+        public function show_lear_tech_media() 
+	{
+		$this->db->select('*');
+		$this->db->from('LEARNING_TECHNOLOGY_MEDIA');
+		$query = $this->db->get();
+		return $query->result();
+	}
 }

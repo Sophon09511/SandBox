@@ -4,177 +4,143 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Fm_evaluation extends CI_Controller
 {
 
-	public function construct()
-	{
-		parent::__construct();
-		$this->load->model('evaluation_model');
-	}
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('evaluation_model');
+    }
+    public function index()
+    {
+        $data['query']=$this->evaluation_model->show_evaluation_criteria();
 
-	public function EVALUATION_CRITERIA()
-	{
+        // 		echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // exit;
+        $this->load->view('mycss');
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('pages/dashboard/evaluation',$data);
+        $this->load->view('templates/footer');
+        $this->load->view('myjs');
+    }
+    public function sh2()
+    {
+        $data['query']=$this->evaluation_model->show_evaluation_criteria_level();//sh2
 
-		$data['query']=$this->evaluation_model->show_EVALUATION_CRITERIA_model();
+        // 		echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // exit;
+        $this->load->view('mycss');
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('pages/dashboard/evaluation',$data);
+        $this->load->view('templates/footer');
+        $this->load->view('myjs');
+    }
 
+    public function sh3()
+    {
+        $data['query']=$this->evaluation_model->show_evaluation_criteria_composition();//sh3
 
-		// 		echo '<pre>';
-		// print_r($data_q_member . $data);
-		// echo '</pre>';
-		// exit;
+        // 		echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // exit;
+        $this->load->view('mycss');
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('pages/dashboard/evaluation',$data);
+        $this->load->view('templates/footer');
+        $this->load->view('myjs');
+    }
+    public function sh4()
+    {
+        $data['query']=$this->evaluation_model->show_evaluation_criteria_composition_level();//sh4
 
-		$this->load->view('mycss');
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('pages/dashboard/evaluation');
-		$this->load->view('templates/footer');
-		$this->load->view('myjs');
-	}
+        // 		echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // exit;
+        $this->load->view('mycss');
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('pages/dashboard/evaluation',$data);
+        $this->load->view('templates/footer');
+        $this->load->view('myjs');
+    }
+    public function sh5()
+    {
+        $data['query']=$this->evaluation_model->show_school_evaluation_level();//sh4
 
+        // 		echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // exit;
+        $this->load->view('mycss');
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('pages/dashboard/evaluation',$data);
+        $this->load->view('templates/footer');
+        $this->load->view('myjs');
+    }
+    public function sh6()
+    {
+        $data['query']=$this->evaluation_model->show_sec_and_secl();//sh6
 
-	public function EVALUATION_CRITERIA_LEVEL()
-	{
+        // 		echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // exit;
+        $this->load->view('mycss');
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('pages/dashboard/evaluation',$data);
+        $this->load->view('templates/footer');
+        $this->load->view('myjs');
+    }
+    
+    public function forms()
+    {
+        
+        // 		echo '<pre>';
+        // print_r($data_q_member . $data_q_committee);
+        // echo '</pre>';
+        // exit;
+        
+        $this->load->view('mycss');
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('pages/forms/forms-evaluation');
+        $this->load->view('templates/footer');
+        $this->load->view('myjs');
+    }
+    
+    public function insert_evaluation_criteria()
+    {
+        $this->evaluation_model->insert_evaluation_criteria_model();
+    }
+    public function insert_evaluation_criteria_level()//sh2
+    {
+        $this->evaluation_model->insert_evaluation_criteria_level_model();
+    }
+    public function insert_evaluation_criteria_composition()//sh3
+    {
+        $this->evaluation_model->insert_evaluation_criteria_composition_model();
+    }
+    public function insert_evaluation_criteria_composition_level()//sh4
+    {
+        $this->evaluation_model->insert_evaluation_criteria_composition_level_model();
+    }
+    public function insert_school_evaluation()//sh5
+    {
+        $this->evaluation_model->insert_school_evaluation_model();
+    }
+    public function insert_sec_and_secl()//sh6
+    {
+        $this->evaluation_model->insert_sec_and_secl_model();
+    }
+    
 
-		$data['query'] = $this->evaluation_model->show_EVALUATION_CRITERIA_LEVEL_model();
-
-
-		// 		echo '<pre>';
-		// print_r($data_q_member . $data);
-		// echo '</pre>';
-		// exit;
-
-		$this->load->view('mycss');
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('pages/dashboard/evaluation', $data);
-		$this->load->view('templates/footer');
-		$this->load->view('myjs');
-	}
-
-	public function EVALUATION_CRITERIA_COMPOSITION()
-	{
-
-		$data['query'] = $this->evaluation_model->show_EVALUATION_CRITERIA_COMPOSITION_model();
-
-
-		// 		echo '<pre>';
-		// print_r($data_q_member . $data);
-		// echo '</pre>';
-		// exit;
-
-		$this->load->view('mycss');
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('pages/dashboard/evaluation', $data);
-		$this->load->view('templates/footer');
-		$this->load->view('myjs');
-	}
-
-	public function EVALUATION_CRITERIA_COMPOSITION_LEVEL()
-	{
-
-		$data['query'] = $this->evaluation_model->show_EVALUATION_CRITERIA_COMPOSITION_LEVEL_model();
-
-
-		// 		echo '<pre>';
-		// print_r($data_q_member . $data);
-		// echo '</pre>';
-		// exit;
-
-		$this->load->view('mycss');
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('pages/dashboard/evaluation', $data);
-		$this->load->view('templates/footer');
-		$this->load->view('myjs');
-	}
-
-	public function SCHOOL_EVALUATION_CRITERIA()
-	{
-
-		$data['query'] = $this->evaluation_model->show_SCHOOL_EVALUATION_CRITERIA_model();
-
-
-		// 		echo '<pre>';
-		// print_r($data_q_member . $data);
-		// echo '</pre>';
-		// exit;
-
-		$this->load->view('mycss');
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('pages/dashboard/evaluation', $data);
-		$this->load->view('templates/footer');
-		$this->load->view('myjs');
-	}
-
-	public function SCHOOL_EVALUATION()
-	{
-
-		$data['query'] = $this->evaluation_model->show_SCHOOL_EVALUATION_model();
-
-
-		// 		echo '<pre>';
-		// print_r($data_q_member . $data);
-		// echo '</pre>';
-		// exit;
-
-		$this->load->view('mycss');
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('pages/dashboard/evaluation', $data);
-		$this->load->view('templates/footer');
-		$this->load->view('myjs');
-	}
-
-
-
-
-	public function form_page()
-	{
-		$this->load->view('mycss');
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('pages/forms/forms-evaluation');
-		$this->load->view('templates/footer');
-		$this->load->view('myjs');
-	}
-
-
-	public function add_EVALUATION_CRITERIA()
-	{
-		$this->evaluation_model->add_EVALUATION_CRITERIA_model();
-	}
-	public function add_EVALUATION_CRITERIA_LEVEL()
-	{
-
-		$this->evaluation_model->add_EVALUATION_CRITERIA_LEVEL_model();
-	}
-
-	public function add_EVALUATION_CRITERIA_COMPOSITION()
-	{
-
-		$this->evaluation_model->add_EVALUATION_CRITERIA_COMPOSITION_model();
-	}
-
-	public function add_EVALUATION_CRITERIA_COMPOSITION_LEVEL()
-	{
-
-		$this->evaluation_model->add_EVALUATION_CRITERIA_COMPOSITION_LEVEL_model();
-	}
-
-	public function add_SCHOOL_EVALUATION()
-	{
-
-		$this->evaluation_model->add_SCHOOL_EVALUATION_model();
-	}
-
-	public function add_SCHOOL_EVALUATION_CRITERIA()
-	{
-
-		$this->evaluation_model->add_SCHOOL_EVALUATION_CRITERIA_model();
-	}
-	public function add_SCHOOL_EVALUATION_CRITERIA_LEVEL()
-	{
-
-		$this->evaluation_model->add_SCHOOL_EVALUATION_CRITERIA_LEVEL_model();
-	}
 }

@@ -18,7 +18,9 @@ class innovation_model extends CI_Model {
             'TEACHER_ID' => $this->input->post('TEACHER_ID'),
             'ATTACHMENT' => $this->input->post('ATTACHMENT'),
             'SOURCE' => $this->input->post('SOURCE'),
-            'PUBLISH_DATE' => $this->input->post('PUBLISH_DATE')
+            'PUBLISH_DATE' => $this->input->post('PUBLISH_DATE'),
+            'SEARCH_KEYWORD' => $this->input->post('SEARCH_KEYWORD')
+            
         );
 		$query=$this->db->insert('INNOVATION',$data);
 		if($query){
@@ -30,4 +32,11 @@ class innovation_model extends CI_Model {
 			echo 'false';
 		}
     }
+    public function show_innovation() 
+	{
+		$this->db->select('*');
+		$this->db->from('INNOVATION ');
+		$query = $this->db->get();
+		return $query->result();
+	}
 }

@@ -55,6 +55,7 @@ class committee_model extends CI_Model {
 			echo 'false';
 		}
     }
+    
     public function show_committee_member_model()
         {
                 $query = $this->db->get('COMMITTEE_MEMBER');

@@ -33,4 +33,12 @@ class best_practice_model extends CI_Model {
 			echo 'false';
 		}
     }
+    public function show_best_practice() 
+	{
+		$this->db->select('*');
+		$this->db->from('BEST_PRACTICE ');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 }

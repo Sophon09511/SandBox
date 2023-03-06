@@ -82,7 +82,7 @@
     </a>
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="<?php echo site_url('Forms_innovation') ?>">
+        <a href="<?php echo site_url('Fm_innovation') ?>">
           <i class="bi bi-circle"></i><span>ข้อมูลนวัตกรรมการศึกษา</span>
         </a>
       </li>
@@ -107,7 +107,7 @@
         </a>
       </li>
       <li>
-        <a href="<?php echo site_url('Fm_evaluation/EVALUATION_CRITERIA?page=aecl1') ?>">
+        <a href="<?php echo site_url('Fm_evaluation') ?>">
           <i class="bi bi-circle"></i><span>ข้อมูลประกันคุณภาพ</span>
         </a>
       </li>

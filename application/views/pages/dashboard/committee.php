@@ -148,4 +148,9 @@ if ($page =='231242') {  ?>
         </div>
     </div><!-- End Recent Sales -->
 <?php } ?>
+<script>
+  setTimeout(function() {
+    document.getElementById('myAlert').remove();
+  }, 5000); // นับถอยหลังให้แสดง 5 วินาที (5000 มิลลิวินาที)
+</script>
 </main><!-- End #main -->

@@ -137,9 +137,5 @@ if (isset( $_SESSION['success'])) { ?>
 
         </div>
     </section>
-    <script>
-  setTimeout(function() {
-    document.getElementById('myAlert').remove();
-  }, 2000); // นับถอยหลังให้แสดง 5 วินาที (5000 มิลลิวินาที)
-</script>
+  
 </main><!-- End #main -->
